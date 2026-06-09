@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Collector</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="max-w-md w-full bg-white p-6 rounded shadow">
+    <form id="memoryForm" class="space-y-4">
+      <div>
+        <label for="term" class="block text-sm font-medium mb-1">Term</label>
+        <select id="term" name="term" required class="w-full border rounded p-2">
+          <option value="1">Term 1 </option>
+          <option value="2">Term 2 </option>
+          <option value="3">Term 3 </option>
+          <option value="4">Term 4 </option>
+          <option value="5">Term 5 </option>
+          <option value="6">Term 6 </option>
+          <option value="7">Term 7 </option>
+          <option value="8">Term 8 </option>
+        </select>
+      </div>
+      <div>
+        <label for="date" class="block text-sm font-medium mb-1">Date</label>
+        <input type="date" id="date" name="date" required class="w-full border rounded p-2" />
+      </div>
+      <div>
+        <label for="senderName" class="block text-sm font-medium mb-1">Your Name</label>
+        <input type="text" id="senderName" name="senderName" required class="w-full border rounded p-2" placeholder="" />
+      </div>
+      <div>
+        <label for="images" class="block text-sm font-medium mb-1">Photos (multiple)</label>
+        <input type="file" id="images" name="images" accept="image/*" multiple required class="w-full" />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium mb-1">Message (optional)</label>
+        <textarea id="message" name="message" rows="3" class="w-full border rounded p-2" placeholder="Your story..."></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" id="submitBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50">
+          Submit
+        </button>
+      </div>
+          <p class="text-sm mb-4 text-center">دمتم سالمين</p>
+
+      <div id="statusMessage" class="text-center text-sm mt-2"></div>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
