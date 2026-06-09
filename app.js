@@ -1,5 +1,5 @@
 // Memory Collector JavaScript
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw116pOe_yFlNMmbmJBWead_4Xcal6oFbcx21FCbxNKgzmgQ6x76sCiOvGtljuymf8E/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwTtmmw_yeHnTQa9pkWVcDbxtZdlitEQlevTdjmCPxT3BXaZ_n01MMHnHcNy1cWWetd/exec';
 
 const form = document.getElementById('memoryForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -62,6 +62,7 @@ form.addEventListener('submit', async (e) => {
 
     const payload = {
       term,
+      senderName,
       message: (i === 0) ? message : '',   // only attach message to first image
       filename,
       mimeType: img.mimeType || '',
