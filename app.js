@@ -1,5 +1,5 @@
 // Memory Collector JavaScript
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz1C9G7lUwelSsgA-lzlYvCv3FaxCpJojBeQQHCSuV0otprwKhnkFDnfdPRO5QGoOM/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw116pOe_yFlNMmbmJBWead_4Xcal6oFbcx21FCbxNKgzmgQ6x76sCiOvGtljuymf8E/exec';
 
 const form = document.getElementById('memoryForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -12,7 +12,6 @@ form.addEventListener('submit', async (e) => {
   statusDiv.textContent = '';
 
   const term = document.getElementById('term').value;
-  const date = document.getElementById('date').value;
   const senderName = document.getElementById('senderName').value.trim();
   const message = document.getElementById('message').value.trim();
   const files = document.getElementById('images').files;
@@ -56,14 +55,13 @@ form.addEventListener('submit', async (e) => {
   for (let i = 0; i < images.length; i++) {
     const img = images[i];
     const ext = (img.filename || '').split('.').pop();
-    const base = date + (senderName ? '_' + senderName : '');
+    const base = senderName || 'photo';
     const filename = (images.length > 1)
       ? base + '_' + (i + 1) + (ext ? '.' + ext : '')
       : base + (ext ? '.' + ext : '');
 
     const payload = {
       term,
-      date,
       message: (i === 0) ? message : '',   // only attach message to first image
       filename,
       mimeType: img.mimeType || '',
